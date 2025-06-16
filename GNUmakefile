@@ -1,7 +1,8 @@
 default: build
 
 build:
-	go build -v ./...
+	go build -o terraform-provider-random -trimpath -buildvcs=false -ldflags "-s -w"
+
 
 install: build
 	go install -v ./...
